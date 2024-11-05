@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.study.springboot.dao.UserDAO">
+
+	<!-- 회원가입 -->
+	<insert id="joinUser" parameterType="UserDTO">
+		insert into user_list (
+			user_id,
+			id,
+			pw,
+			name,
+			birth_date,
+			nickname,
+			address1,
+			address2,
+			phone_num,
+			email,
+			join_date,
+			grade)
+		values (
+			user_list_seq.nextval,
+			#{id},
+			#{psw},
+			#{name},
+			#{birth_date},
+			#{nickName},
+			#{address1},
+			#{address2},
+			#{phoneNum},
+			#{mail},
+			sysdate,
+			default)
+	</insert>
+
+	<!-- 아이디 중복 체크 -->
+	<select id="idCheck" 
+			parameterType="UserDTO"
+			resultType="int">
+		select 
+			count(*) as count
+		from user_list
+		where id = #{id}
+	</select>
+	
+	<select id="loginCheck"
+			parameterType="UserDTO"
+			resultType="int">
+		select
+			count(*) as count
+		from user_list
+		where id = #{id} and pw = #{psw}
+	</select>
+	
+	<select id="selectUserInfo"
+			parameterType="UserDTO"
+			resultType="UserDTO">
+		select
+			user_id,
+			id,
+			pw as psw,
+			name,
+			birth_date,
+			nickname,
+			address1,
+			address2,
+			phone_num as phoneNum,
+			email as mail,
+			join_date,
+			grade
+		from user_list
+		where id = #{id} and pw = #{psw}
+			
+	</select>
+	
+	<select id="selectUser" parameterType="userDTO" resultType="userDTO">
+		select
+			user_id,
+			id,
+			pw as psw,
+			name,
+			birth_date,
+			nickname,
+			address1,
+			address2,
+			phone_num as phoneNum,
+			email as mail,
+			join_date,
+			grade
+		from user_list
+		where user_id = #{user_id} 
+	</select>
+	
+	<update id="updateUser" parameterType="userDTO">
+		update 
+			user_list
+		set
+			name = #{name},
+			nickname = #{nickName},
+			phone_num = #{phoneNum},
+			birth_date = #{birth_date},
+			email = #{mail},
+			address1 = #{address1},
+			address2 = #{address2}
+		where
+			user_id = #{user_id}
+		
+	</update>
+	
+	<select id="findId" parameterType="userDTO" resultType="userDTO">
+		select
+			user_id,
+			id
+		from
+			user_list
+		<where>
+			<choose>
+				<when test=" contact == 'phone' and phoneNum != null " >
+					name = #{name} and phone_num = #{phoneNum}
+				</when>
+				<when test=" contact == 'email' and mail != null " >
+					name = #{name} and email = #{mail}
+				</when>
+				<otherwise>
+					id = #{id} and phone_num = #{phoneNum}
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	
+	<update id="updatePw" parameterType="userDTO">
+		update 
+			user_list
+		set
+			pw = #{psw}
+		where
+			id = #{id}
+		
+	</update>
+	
+	<delete id="deleteUser" parameterType="int">
+		DELETE
+		FROM
+			user_list
+		WHERE
+			user_id = #{user_id}
+	</delete>
+	
+	<select id="totalCount" resultType="int">
+		select count(*) from user_list where grade = 0
+	</select>
+	
+	<select id="userList" 
+           parameterType="UserDTO"
+           resultType="UserDTO">
+        SELECT *
+		FROM(
+		    SELECT rownum as rnum,
+			       user_id,
+			       id,
+			       name,
+			       birth_date,
+			       nickname,
+			       address1,
+			       address2,
+			       phone_num as phoneNum,
+			       email as mail,
+			       join_date
+		    FROM user_list 
+		    WHERE grade = 0
+		    ORDER by user_id asc
+	    )
+	    WHERE rnum <![CDATA[ >= ]]> #{startNum}
+	    AND rnum <![CDATA[ <= ]]> #{endNum}
+    </select>
+	
+	<select id="userSearch"
+		parameterType="UserDTO"
+		resultType="UserDTO">
+		SELECT *
+		FROM(
+			SELECT rownum as rnum,
+			       user_id,
+			       id,
+			       name,
+			       birth_date,
+			       nickname,
+			       address1,
+			       address2,
+			       phone_num as phoneNum,
+			       email as mail,
+			       join_date 
+		FROM user_list
+		<where>
+			grade = 0
+			<if test=" name != null and name != '' ">
+				AND upper(name) = upper(#{name})
+			</if>
+			<if test=" phoneNum != null and phoneNum != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND upper(phone_num) like '%' || upper(#{phoneNum}) || '%'
+			</if>
+		</where>
+		order by 
+			user_id asc
+		)
+		WHERE rnum <![CDATA[ >= ]]> #{startNum}
+	    AND rnum <![CDATA[ <= ]]> #{endNum}
+	</select>
+	
+	<select id="searchTotalCount" parameterType="UserDTO" resultType="int">
+		SELECT count(*)
+		FROM(
+			SELECT rownum as rnum,
+			       user_id,
+			       id,
+			       name,
+			       birth_date,
+			       nickname,
+			       address1,
+			       address2,
+			       phone_num as phoneNum,
+			       email as mail,
+			       join_date 
+		FROM user_list
+		<where>
+			grade = 0
+			<if test=" name != null and name != '' ">
+				AND upper(name) = upper(#{name})
+			</if>
+			<if test=" phoneNum != null and phoneNum != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND upper(phone_num) like '%' || upper(#{phoneNum}) || '%'
+			</if>
+		</where>
+		order by 
+			user_id asc
+		)
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+

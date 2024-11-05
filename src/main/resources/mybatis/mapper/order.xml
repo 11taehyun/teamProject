@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.study.springboot.dao.OrderDAO">
+
+	<insert id="orderGoods" parameterType="OrderDTO">
+		INSERT INTO orderlist (
+			order_id,
+			user_id,
+			goods_id,
+			order_qty,
+			order_date,
+			order_option)
+		VALUES (
+			orderlist_seq.nextval,
+			#{user_id},
+			#{goods_id},
+			#{order_qty},
+			sysdate,
+			#{order_option})
+	</insert>
+
+	<select id="selectOrder" parameterType="JoinDTO" resultType="JoinDTO">
+		SELECT *
+		FROM(
+		    SELECT rownum as rnum,
+		           o.order_id,
+		           o.order_date,
+		           o.goods_id,
+		           o.user_id,
+		           o.order_qty,
+		           o.dilivery,
+		           o.order_option,
+		           
+		           g.goods_name,
+		           g.goods_price,
+		           g.goods_img,
+		           g.goods_category1,
+		           g.goods_category2,
+		           g.goods_quantity,
+		           g.goods_features,
+		           g.goods_adddate,
+		           g.goods_brand
+		        FROM
+		    
+					orderlist o, goods g
+				WHERE
+					o.goods_id = g.goods_id
+				AND
+					user_id = #{user_id})
+				WHERE
+					 rnum <![CDATA[ >= ]]> #{startNum}
+	    		 AND rnum <![CDATA[ <= ]]> #{endNum}
+	</select>
+	
+	<select id="orderCount" parameterType="JoinDTO" resultType="int">
+		SELECT count(*)
+		from(
+		    SELECT rownum as rnum,
+		           o.order_id,
+		           o.order_date,
+		           o.goods_id,
+		           o.user_id,
+		           o.order_qty,
+		           o.dilivery,
+		           o.order_option,
+		           
+		           g.goods_name,
+		           g.goods_price,
+		           g.goods_img,
+		           g.goods_category1,
+		           g.goods_category2,
+		           g.goods_quantity,
+		           g.goods_features,
+		           g.goods_adddate,
+		           g.goods_brand
+		        from
+		    
+					orderlist o, goods g
+				WHERE
+					o.goods_id = g.goods_id
+				AND
+					user_id = #{user_id})
+	</select>
+	
+	<select id="dilivery1Count" parameterType="int" resultType="int">
+		SELECT count(*)
+		FROM 
+			orderlist o, goods g
+		WHERE
+			o.goods_id = g.goods_id
+		AND
+            dilivery = '배송중'
+        AND
+            user_id = #{user_id}
+	
+	</select>
+
+
+</mapper>

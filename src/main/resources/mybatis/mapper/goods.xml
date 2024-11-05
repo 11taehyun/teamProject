@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.study.springboot.dao.GoodsDAO">
+
+	<insert id="addGoods" parameterType="GoodsDTO">
+		insert into goods (
+			goods_id,
+			goods_name,
+			goods_price,
+			goods_img,
+			goods_category1,
+			goods_category2,
+			goods_quantity,
+			goods_features,
+			goods_brand,
+			goods_addDate)
+		values (
+			goods_seq.nextval,
+			#{goods_name},
+			#{goods_price},
+			#{goods_img},
+			#{goods_category1},
+			#{goods_category2},
+			#{goods_quantity},
+			#{goods_features},
+			#{goods_brand},
+			sysdate)
+	</insert>
+	
+<!-- 	<select id="selectGoods"  -->
+<!-- 			parameterType="GoodsDTO"  -->
+<!-- 			resultType="GoodsDTO"> -->
+<!-- 		SELECT * -->
+<!-- 		FROM( -->
+<!-- 		    SELECT rownum as rnum, -->
+<!-- 			       goods_id, -->
+<!-- 			       goods_name, -->
+<!-- 			       goods_price, -->
+<!-- 			       goods_img, -->
+<!-- 			       goods_category1, -->
+<!-- 			       goods_category2, -->
+<!-- 			       goods_quantity, -->
+<!-- 			       goods_features, -->
+<!-- 			       goods_addDate, -->
+<!-- 			       goods_brand -->
+<!-- 		    FROM goods  -->
+<!-- 		    ORDER by goods_id asc -->
+<!-- 	    ) -->
+<!-- 	    WHERE rnum <![CDATA[ >= ]]> #{startNum} -->
+<!-- 	    AND rnum <![CDATA[ <= ]]> #{endNum} -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="goodsTotalCount" resultType="int"> -->
+<!-- 		select count(*) from goods -->
+<!-- 	</select> -->
+	
+	<!-- 상품 id로 상품 조회 -->
+	<select id="viewGoods" parameterType="String" resultType="GoodsDTO"	>
+		select * from goods where goods_id = #{goods_id}
+	</select>
+		
+	<!-- 상품 삭제 -->
+	<delete id="deleteGoods" parameterType="int" >
+		DELETE
+		FROM 
+			goods
+		WHERE 
+			goods_id = #{goods_id} 
+	</delete>
+	
+	<select id="goodsSearch"
+		parameterType="GoodsDTO"
+		resultType="GoodsDTO">
+		SELECT *
+		FROM(
+			SELECT rownum as rnum,
+			       goods_id,
+			       goods_name,
+			       goods_price,
+			       goods_img,
+			       goods_category1,
+			       goods_category2,
+			       goods_quantity,
+			       goods_features,
+			       goods_addDate,
+			       goods_brand
+		    FROM goods 
+		<where>
+			<if test=" goods_name != null and goods_name != '' ">
+				AND upper(goods_name) = upper(#{goods_name})
+			</if>
+			<if test=" goods_category1 != null and goods_category1 != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND upper(goods_category1) like '%' || upper(#{goods_category1}) || '%'
+			</if>
+			<if test=" category1 != null and category1 != '' ">
+				AND goods_category1 = #{category1}
+			</if>
+			<if test=" category1 != null and category1 != '' 
+					   and category2 != null and category2 != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND goods_category1 = #{category1} AND goods_category2 = #{category2}
+			</if>
+		</where>
+		order by 
+			goods_id asc
+		)
+		WHERE rnum <![CDATA[ >= ]]> #{startNum}
+	    AND rnum <![CDATA[ <= ]]> #{endNum}
+	</select>
+	
+	<select id="searchTotalCount" parameterType="GoodsDTO" resultType="int">
+		SELECT count(*)
+		FROM(
+			SELECT rownum as rnum,
+			       goods_id,
+			       goods_name,
+			       goods_price,
+			       goods_img,
+			       goods_category1,
+			       goods_category2,
+			       goods_quantity,
+			       goods_features,
+			       goods_addDate,
+			       goods_brand
+		    FROM goods 
+		<where>
+			<if test=" goods_name != null and goods_name != '' ">
+				AND upper(goods_name) = upper(#{goods_name})
+			</if>
+			<if test=" goods_category1 != null and goods_category1 != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND upper(goods_category1) like '%' || upper(#{goods_category1}) || '%'
+			</if>
+			<if test=" category1 != null and category1 != '' ">
+				AND goods_category1 = #{category1}
+			</if>
+			<if test=" category1 != null and category1 != '' 
+					   and category2 != null and category2 != '' ">
+<!-- 				and upper(writer) = upper(#{writer}) -->
+				AND goods_category1 = #{category1} AND goods_category2 = #{category2}
+			</if>
+		</where>
+		order by 
+			goods_id asc
+		)
+	</select>
+	
+	<update id="updateGoods" parameterType="GoodsDTO">
+		UPDATE 
+			goods
+		SET 
+			goods_name = #{goods_name},
+			goods_price = #{goods_price},
+			goods_img = #{goods_img},
+			goods_category1 = #{goods_category1},
+			goods_category2 = #{goods_category2},
+			goods_quantity = #{goods_quantity},
+			goods_features = #{goods_features},
+			goods_brand = #{goods_brand}
+		WHERE
+			goods_id = #{goods_id}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+

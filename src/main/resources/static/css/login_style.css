@@ -1,0 +1,250 @@
+/* 이 CSS 코드는 로그인 폼을 가운데 정렬시키고, 입력창과 버튼 디자인을 구성하는 코드입니다. */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/* body 태그의 스타일을 설정합니다. 폰트는 Noto Sans KR을 사용하며, 전체 화면을 가득 채우는 display: flex 속성을 주어 중앙 정렬을 시킵니다. 배경 색상은 흰색으로, 배경 이미지의 크기는 cover로 설정합니다. */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    background-size: cover;
+}
+/* body 태그의 이전에 존재하는 가상 요소(before)를 사용하여 배경 색상을 하얀색으로 설정합니다.  */
+body::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: white;
+}
+/* 로그인 폼의 위치를 상대적(relative)으로 설정하고, z-index 속성을 2로 설정하여 다른 엘리먼트보다 위에 오도록 합니다. */
+.login-form {position: relative; z-index: 2;}
+/* 로그인 폼 상단의 제목을 스타일링합니다. 폰트 크기는 32px, 색상은 검은색, 텍스트 정렬은 가운데(center)로 설정하며, 하단 마진을 60px으로 설정합니다. */
+.login-form h1 {
+    font-size: 32px; color: black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+/* 입력창과 라벨을 담는 div(int-area)의 스타일을 설정합니다. 폭은 400px로 고정하고, 상대적인 위치 설정(relative)을 적용합니다. 상단 마진을 20px으로 설정합니다. */
+.int-area {
+     width: 400px; position: relative;
+     margin-top: 20px; 
+    }
+/* 스타일링된 레이블 중에 클래스 이름이 "warning"인 것을 선택하고, 텍스트 색상을 빨강으로 설정한다.
+느낌표(!)를 사용하여 "important"를 설정하면 다른 스타일보다 우선시되어 적용된다.
+"warning" 클래스가 적용된 레이블이 있을 때, warning 애니메이션을 3회 반복한다. */
+.int-area label.warning{
+    color: red !important;
+    animation: warning .3s ease; 
+    animation-iteration-count: 3;
+}
+/* "warning" 애니메이션에 대한 keyframes를 설정한다.
+0%부터 75%까지, transform 속성을 사용하여 좌우로 8px씩 이동하는 효과를 준다.
+각각 25%와 75%에서는 이동하는 방향을 바꾼다. */
+@keyframes warning {
+    0% {transform: translateX(-8px);}
+    25% {transform: translateX(8px);}
+    50% {transform: translateX(-8px);}
+    75% {transform: translateX(8px);}
+}
+/* 첫 번째 입력 영역에는 위쪽 여백을 설정하지 않는다. */
+.int-area:first-child {margin-top: 0;}
+/* 입력 영역 내부의 입력 필드에 대한 스타일을 설정한다.
+너비는 100%로 하고, 패딩은 상단 20px, 좌우 10px으로 한다.
+배경 색상은 투명하게, 테두리는 없게, 밑줄만 있는 데코레이션을 적용한다.
+폰트 크기와 색상을 설정하고, 아웃라인은 없앤다. */
+.int-area input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px; color: black;
+    outline: none;
+}
+/* 입력 필드 위에 표시되는 레이블에 대한 스타일을 설정한다.
+왼쪽 10px, 위쪽 15px으로 위치를 지정하고, 폰트 크기와 색상을 설정한다.
+transform 속성에 top과 .5s ease를 지정하여, 레이블이 위에서 아래로 등장하는 효과를 준다. */
+.int-area label {
+    position: absolute; left: 10px; top: 15px;
+    font-size: 18px; color: black;
+    transform: top .5s ease;
+}
+/* 입력 필드에 포커스가 있을 때, 그 바로 위의 레이블을 보여준다. */
+.int-area input:focus + label{
+    display : block;
+}
+/* 해당 CSS 코드는 input 요소가 유효한 값(valid)일 경우에만 그 다음 형제 요소인 label을 숨기는 역할을 합니다. */
+.int-area input:valid + label {
+    display: none;
+}
+/* 로그인 버튼 */
+/* .btn-area {margin-top: 30px;} */
+.btn-area button {
+    margin-top: 20px;
+    width: 400px; height: 50px;
+    background: #262626;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.caption {
+    margin-top: 20px;
+    text-align: center;
+}
+.caption a {
+    font-size: 15px; color: #999;
+    text-decoration: none;
+}
+
+/* 회원가입 ID찾기 비밀번호 찾기 링크 */
+.nav {
+    text-align: center;
+}
+.nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+/* 회원가입 ID찾기 비밀번호 찾기 링크 밑줄 없애기 */
+.nav a {
+    text-decoration: none;
+  }
+
+/* 로그인 하단 이미지 */
+/* 리셋 CSS */
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+/* 슬라이드 Style */
+.slide {
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+  
+    /* position */
+    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+    position: relative;
+  
+    /* size */
+    width: 100%;
+  
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+  }
+  .slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+  
+    /* size */
+    width: 100%;
+    height: 300px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+  
+    /* transition */
+    transition: left 0.15s;
+  }
+  .slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+  
+    /* size */
+    width: 32px;
+    height: 32px;
+  
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+  }
+  
+  .slide_prev_button {
+    left: 10px;
+  }
+  .slide_next_button {
+    right: 10px;
+  }
+  
+  /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+  .slide_item.item1 {
+    background-color: darkgoldenrod;
+  }
+  .slide_item.item2 {
+    background-color: aqua;
+  }
+  .slide_item.item3 {
+    background-color: blueviolet;
+  }
+  .slide_item.item4 {
+    background-color: burlywood;
+  }
+  .slide_item.item5 {
+    background-color: cornflowerblue;
+  }
+  
+  /* 페이지네이션 스타일 */
+  ul,
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+  
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slide_pagination > li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #7fb5ff88;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: #7fb5ff;
+  }
+  
+  .slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+  }
+  
+  /* 에러메시지 */
+  .msg {
+  	color: #c80808;
+  	margin-top: 20px;
+  }

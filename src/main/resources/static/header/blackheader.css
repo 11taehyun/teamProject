@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+header *{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header a{
+    text-decoration: none;  
+    color: black;
+}
+
+header input{
+    border: none;
+}
+
+header header{
+    width: 100%;
+    height: 9.5em;
+}
+
+header #header{
+    width: 100%;
+/*     height: 5em; */
+    background-color: black;
+    z-index: 100;
+}
+
+header #logo2 img{
+    width: 9em;
+    top: 1em;
+    left: 5em;
+    height: auto;
+    z-index: 99;
+}
+
+header #search2 input{
+    width: 23em;
+    left: 13.8em;
+    top: -1.8em;
+    background-color: black;
+    z-index: 99;
+    color: white;
+}
+header input:focus{
+    outline: none;
+}
+
+
+header #search2 input[type="text"] {
+    top: -3em;
+    left: 20em;
+    font-size: 0.8em;
+    border-bottom: 0.1em solid white;
+    z-index: 100;
+    padding-bottom: 1em;
+
+}
+
+
+
+header #search2 img{
+    top: -1.7em;
+    left: 14em;
+    z-index: 100;
+}
+
+header #logout div{
+    display: inline-block;
+    
+}
+
+header #logout a{
+    left: 72em;
+    top: -6.5em;
+    font-weight: bold;
+    color: white;
+    font-family: 'NanumSquareLight';
+    font-weight: lighter;
+    font-size: small;
+}
+
+header #menu2{
+    font-family: 'NanumSquareExtraBold';
+    width: 100%;
+    top: -2.2em;
+    padding: 1em;
+    background-color: white;
+    z-index: 99;
+}
+
+ header #menu2 div{
+    left: 1.5em;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+header #mid2{
+    font-size: 1.2em;
+    top: 5em;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    background-color: white;
+}
+
+header #mid2 div{
+    left: -4.3em;
+    padding: 0.5em 0.7em;
+    font-family:  'NanumSquareLight';
+    vertical-align: top;
+}
+
+header #mid2[id]{
+    vertical-align: top;
+    top: 8.5em;
+/*     left: -5.5em; */
+}
+
+header #mid2 a{
+    vertical-align: top;
+    padding: 0.2em 1.1em;
+    width: 3em;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+header #best2 {
+    display: inline-block;
+    
+}
+
+header #women2{
+    display: inline-block;
+}
+
+header #men2{
+    display: inline-block;
+    left: -0.5em;
+    
+}
+
+header #kids2{
+    display: inline-block;
+    left: -1.5em;
+    
+}
+
+header #beauty2{
+    display: inline-block;
+    left: -1em;
+   
+}
+
+header #mid2 div:hover{
+    background-color:#262626;
+}
+
+header #mid2 a:hover{
+    color: white;
+}
+
+header #mid2 #best2:hover{
+    background-color: white;
+}
+
+header #mid2 #women2:hover{
+    background-color: white;
+}
+
+header #mid2 #men2:hover{
+    background-color: white;
+}
+
+header #mid2 #kids2:hover{
+    background-color: white;
+}
+
+header #mid2 #beauty2:hover{
+    background-color: white;
+}
+
+header.shrink {
+  height: 60px;
+}
+
+header.shrink #logo2 img {
+  height: 40px;
+}
+
+header.shrink #search2 {
+  padding-top: 5px;
+}

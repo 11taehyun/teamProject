@@ -1,0 +1,22 @@
+input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.input { 
+    text-align: center;
+}
+.button{
+    text-align: center;
+}
+.button button{
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: black;
+  }

@@ -1,0 +1,73 @@
+.a1, .a3, .a4 {
+    display: flex;
+    margin-bottom: 0.9em;
+    font-size: 1em;
+    line-height: 2em;
+    color: #D9D9D9;
+    text-decoration: none;
+    font-family: 'NanumSquareBold';
+}
+
+.a2 {
+    display: flex;
+    margin-bottom: 0.9em;
+    font-size: 1em;
+    line-height: 2em;
+    text-decoration: none;
+    font-family: 'NanumSquareBold';
+    color: #262626;
+}
+
+.like-list-block {
+    width: 60em;
+    display: block;
+    float: right;
+    padding-right: 1em;
+}
+
+.like-list-title {
+    display: block;
+    margin-top: 3em;
+    width: 100%;
+    font-family: 'NanumSquare';
+}
+
+.title {
+    display: inline-block;
+}
+
+.like_info {
+    margin-left: 1em;
+    color: #595959;
+    font-family: 'NanumSquare';
+}
+
+.img_block_section {
+    margin-top: 1em;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.img_block {
+    display: none;
+    width: 20%;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+.img_block > a > img {
+    width: 100%;
+}
+
+.like_list_none {
+    text-align: center;
+    line-height: 40em;
+}
+
+.like_list_none > span {
+    display: inline-block;
+    color: #595959;
+    line-height: 40em;
+    font-size: 1em;
+}

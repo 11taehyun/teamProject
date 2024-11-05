@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+/* * { */
+/* 	font-size: 0; */
+/* } */
+
+/* div{ */
+/* 	border: 1px solid red; */
+/* } */
+
+/* header{ */
+/* 	width: 100%; */
+/* 	height: 100px; */
+/* 	background-color: black; */
+/* } */
+
+/* header .header_logo_area{ */
+/* 	height: 100%; */
+/* 	line-height: 100px; */
+/* 	text-align: center; */
+/* } */
+
+/* header .logo{ */
+/* 	width: 140px; */
+/* 	vertical-align: middle; */
+/* } */
+
+/* .top_list{ */
+/* 	width: 100%; */
+/* 	height: 40px; */
+/* 	background-color: gray; */
+/* 	text-align: center; */
+/* 	line-height: 40px; */
+/* } */
+
+/* .top_list ul{ */
+/* 	list-style: none; */
+/* 	margin: 0; */
+/* 	padding: 0; */
+/* 	vertical-align: middle; */
+/* 	height: 40px; */
+/* } */
+
+/* .top_list li{ */
+/* 	margin: 0px 30px; */
+/* 	padding: 0; */
+/* 	border: 0; */
+/* 	display: inline-block; */
+/* } */
+
+/* .top_list li a{ */
+/* 	text-decoration: none; */
+/* 	font-size: 20px; */
+/* 	color: white; */
+/* } */
+
+#content {
+	width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#content #title {
+	text-align: center;
+    margin-bottom: 40px;
+}
+
+#table {
+	margin: 0 auto;
+	width: 1250px;
+	text-align: center;
+}
+
+section {
+  color: #666;
+  font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+th,
+td {
+  padding: 6px 10px;
+}
+th {
+  background: #42444e;
+  color: #fff;
+  text-align: center;
+}
+tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 6px;
+}
+td {
+  border-right: 1px solid #c6c9cc;
+  border-bottom: 1px solid #c6c9cc;
+}
+td:first-child {
+  border-left: 1px solid #c6c9cc;
+}
+tr:nth-child(even) td {
+  background: #eaeaed;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+.pageNumber{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.pageNumber a {
+    font-size: 18px;
+    margin: 0 3px;
+    text-decoration: none;
+    color: #666;
+}
+
+form {
+	text-align: center;
+	margin-top: 12px;
+}

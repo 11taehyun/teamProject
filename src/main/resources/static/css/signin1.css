@@ -1,0 +1,159 @@
+.all {
+    font-family: 'NanumSquare';
+}
+.center{
+    text-align: center;
+}
+.h2_margin{
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+}
+.big_height_box{
+    width: 30%;
+    margin: auto;
+}
+.signin_img_size {
+    margin-top: 2em;
+    width: 80%;
+}
+.signin_h2{
+    font-family: 'NanumSquareBold';
+}
+.signin_input_big_box, .input_base{
+    width: 100%;
+}
+.red_star{
+    color: #c80808;
+    font-family: 'NanumSquareBold';
+    font-size: 1.5em;
+}
+.input_base{
+    border: none;
+    border-bottom: 0.1em solid black;
+    padding-bottom: 0.8em;
+    padding-top: 0.6em;
+    outline: none;
+}
+.input_id {
+	position: relative;
+}
+.han {
+    position: relative;
+}
+.eye_img_size{
+    width: 0.8em;
+    position: absolute;
+    left: 22.8em;
+    top: 0.5em;
+    
+}
+.search_img_size{
+    width: 0.8em;
+}
+.eye_img_size, .search_img_size{
+    position: absolute;
+}
+.wndqhrqjxmstm {
+    position: relative;
+}
+.jungbok {
+    padding: auto;
+    background-color: #262626;
+    color: white;
+    border: none;
+    width: 5em;
+    height: 2em;
+    position: absolute;
+    top: 0.3em;
+    left: 23.3em;
+    
+}
+.phoneNumber, .email{
+    position: relative;
+}
+.pn_chk, .mail_chk {
+    padding: auto;
+    background-color: #262626;
+    color: white;
+    border: none;
+    width: 5em;
+    height: 2em;
+    position: absolute;
+    top: 0.3em;
+    left: 23.3em;
+}
+.eye_img_size, .search_img_size, .jungbok, .pn_chk{
+    cursor: pointer;
+}
+.input_name {
+    margin: 1.2em 0 ;
+}
+.sebl {
+    position: relative;
+}
+.search_img_size {
+    left: 22.5em;
+    top: 0.2em;
+}
+.input_under_margin{
+    margin-bottom: 0.8em;
+}
+.psw_hs {
+    margin-top: -0.2em;
+    padding-bottom: 1em;
+    display: none;
+    color: #c80808;
+}
+.nickname_hide, .pn_chk2, .mail_chk2, .psw_chk2 {
+    margin-top: 0.5em;
+    padding-bottom: 1em;
+    display: none;
+    color: #c80808;
+}
+.id_check_ok {
+	margin-top: 0.5em;
+    padding-bottom: 1em;
+    color: #C80808;
+    font-family: 'NanumSquare';
+    display: none;
+}
+.id_check_no {
+	margin-top: 0.5em;
+    padding-bottom: 1em;
+    color: #C80808;
+    font-family: 'NanumSquare';
+    display: none;
+}
+.signin_text_title{
+    font-family: 'NanumSquare';
+    font-size: 1.5em;
+}
+
+/* 체크박스 */
+.checkbox_big_box{
+    margin: 1.5em 0 1em 0;
+}
+.checkbox{
+    margin: 0.5em;
+    
+}
+.check_text{
+    font-size: 0.9em;
+}
+.jasehi{
+    color: #262626;
+    font-size: 0.7em;
+}
+.signin_button_box{
+    margin: 2em 0;
+}
+.signin_button{
+    position: relative;
+    background-color: #262626;
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 2em 0;
+    width: 100%;
+    cursor: pointer;
+}

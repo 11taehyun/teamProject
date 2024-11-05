@@ -1,0 +1,541 @@
+*{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+a{
+    text-decoration: none;  
+    color: black;
+}
+
+input{
+    border: none;
+}
+
+header{
+    width: 100%;
+    height: 12em;
+    position: fixed;
+    z-index: 99;
+    
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 12em;
+    transition: height 0.3s ease; 
+/*     top: 0.8em; */
+    }
+
+#header.shrink {
+    height: 40px; 
+  }
+
+header #header{
+    position: fixed;
+}
+
+header.scrolled{
+    height: 7.5em;
+}
+header.scrolled #header{
+    height: 5em;
+    
+}
+
+header.scrolled #header #search2 img{
+    left: 26em;
+    z-index: 5;
+}
+header.scrolled #header #logo2 img{
+    width: 9em;
+    top: 1em;
+    height: auto;
+    z-index: 10;
+}
+header.scrolled #header #logout a{
+    font-size: small;
+    left: 78em;
+    top: -6.1em;
+    font-weight: lighter;
+}
+header.scrolled #header #login a{
+    font-size: small;
+    font-weight: lighter;
+    z-index: 100;
+}
+header.scrolled #header #logout2 a{
+    font-size: small;
+    left: 78em;
+    top: -6.1em;
+    font-weight: lighter;
+}
+header.scrolled #header #login2 a{
+    font-size: small;
+    font-weight: lighter;
+    z-index: 100;
+}
+
+
+header.scrolled #header input[type="text"]{
+    top: -3em;
+    left: 20em;
+    font-size: 0.8em;
+    border-bottom: 0.1em solid white;
+}
+
+header.scrolled #header input{
+    width: 23em;
+}
+
+header.scrolled #header #search2 img{
+    left: 13.8em;
+    top: -1.8em;
+}
+
+header.scrolled #header #menu2{
+    margin-top: 2.2em;
+}
+header.scrolled #header #mid2{
+    top: 7em;
+}
+
+header.scrolled #header #login2{
+	top: -8.5em;
+}
+
+#icon_conteiner{
+    text-align: right;
+    text-align: right;
+    top: -9em;
+    width: 100%;
+    z-index: 100;
+    left: 63em;
+    display: inline;
+}
+
+#icon{
+	display: inline-block;
+}
+
+#icon img{
+    width: 4.5em;
+}
+
+
+#logo2 img{
+    width: 12em;
+    top: 2em;
+    left: 5em;
+}
+
+#search2 input{
+    display: inline-block;
+    text-align: left;
+    width: 25em;
+    height: 1em;
+    font-size: 1em;
+    top: -1.59em;
+    left: 20em;
+    padding-bottom: 1em ;
+    padding-top: 1em;
+    font-family: 'NanumSquareLight';
+    border-bottom: 0.1em solid black;
+    font-weight: bold;
+    color: black;
+    
+}
+input[type="text"]{
+    color: white;
+    flex-grow: 1;
+}
+
+input:focus{
+    outline: none;
+}
+
+#search2 img {
+    top: -1em;
+    left: 17em;
+}
+
+
+
+#logout div{
+    display: inline-block;
+    
+}
+
+#logout a{
+    display: none;
+    left: 60em;
+    top: -7em;
+    font-weight: bold;
+    color: white;
+    font-family: 'NanumSquareLight';
+    z-index: 1;
+}
+#logout2 div{
+    display: inline-block;
+    
+}
+
+#logout2 a{
+    display: none;
+    left: 70.5em;
+    top: -8em;
+    color: white;
+    font-family: 'NanumSquareLight';
+    z-index: 1;
+}
+
+#login_conteiner{
+	display: none;
+}
+
+#login{
+    position: relative;
+    text-align: right;
+    padding-right: 2em;
+    top: -8.2em;
+}
+
+#login div{
+    display: inline-block;
+    
+}
+
+#login a{
+    font-weight: bold;
+    color: white;
+    font-family: 'NanumSquareLight';
+    z-index: 100;
+
+}
+
+#login2{
+    position: relative;
+    text-align: right;
+    padding-right: 2em;
+    top: -9.5em;
+    margin-top: 53px;
+}
+
+#login2 div{
+    display: inline-block;
+    
+}
+
+#login2 a{
+    color: black;
+    font-family: 'NanumSquareLight';
+    z-index: 1;
+}
+
+#menu2{
+    font-family: 'NanumSquareExtraBold';
+    top: -10em;
+    z-index: 10;
+    padding-top: 1em;
+    height: 3em;
+    background-color: white;
+ }
+ #menu2 a{
+    left: 1.5em;
+ }
+
+ #menu2 div{
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    justify-content: space-between;
+}
+
+#mid2{
+    width: 100%;
+    background-color: white;
+    font-size: 1.2em;
+    top: 10.01em;
+    height: 15em;
+    padding-top: 2em;
+    position: fixed;
+    padding-right: 3em;
+}
+
+#mid2 div{
+    padding : 0.5em 0.5em;
+    font-family:  'NanumSquareLight';
+    position: relative;
+    vertical-align: top;
+    justify-content: space-between;
+    top: -1em;
+    left: 1.5em;
+    z-index: 10;
+    text-align: center;
+}
+
+
+#mid2[id]{
+    vertical-align: top;
+    left: -1em;
+}
+
+
+#mid2 a{
+    padding : 0.5em 1.5em;
+    width: 3em;
+    left: 0.1em;
+    box-sizing: border-box;
+}
+
+#best2 {
+    display: inline-block;
+    
+}
+
+#women2{
+    display: inline-block;
+}
+
+#men2{
+    display: inline-block;
+}
+
+#kids2{
+    display: inline-block;
+}
+
+#beauty2{
+    display: inline-block;
+}
+
+#mid2 div:hover{
+    background-color:#262626;
+}
+
+#mid2 a:hover{
+    color: white;
+}
+
+#mid2 #best2:hover{
+    background-color: white;
+}
+
+#mid2 #women2:hover{
+    background-color: white;
+}
+
+#mid2 #men2:hover{
+    background-color: white;
+}
+
+#mid2 #kids2:hover{
+    background-color: white;
+}
+
+#mid2 #beauty2:hover{
+    background-color: white;
+}
+
+header.shrink {
+  height: 60px;
+}
+
+header.shrink #logo2 img {
+  height: 40px;
+}
+
+header.shrink #search2 {
+  padding-top: 5px;
+}
+
+
+
+
+#brand{
+    top: 13em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#brand div{
+    width: 33%;
+    left: 4em;
+}
+
+.brand_logo{
+    width: 10em;
+    height: 2em;
+    position: relative;
+    padding: 2em 3em;
+    border-bottom: 0.2em solid #000;
+    
+}
+
+
+
+.item{
+    width: 18em;
+    height: 20em;
+}
+
+h1{
+    padding-top: 1em;
+    text-align: center;
+    font-family:  'NanumSquareExtraBold';
+    font-size: 2.5em;
+    
+}
+
+#heart{
+    width: 2.5em;
+    top: -17em;
+    left: -18em;
+    
+}
+
+#heart:hover{
+    content: url(/KakaoTalk_20230515_154010171.png);
+    
+}
+
+
+
+/* #myCarousel div{
+    top: 3em;
+    display: flex;
+}
+
+.carousel-inner{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-item{
+    position: relative;
+    display: flex;
+    transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+    display: none;
+}
+
+.carousel-item img{
+    top: 4em;
+    max-width: auto;
+    height: 42em;
+    object-fit: contain;
+
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 24em;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-control-prev{
+    content: url(./left.png);
+    width: 5em;
+    left: 1em;
+    
+}
+
+.carousel-control-next{
+    content: url(./right.png);
+    width: 5em;
+    right: 1em;
+}
+
+#dot_conteiner{
+    position: relative;
+    width: 100%;
+    border: 1px solid #000;
+    z-index: 10;
+}
+
+#dot_conteiner button{
+    color: #000;
+    left: 20em;
+    width: 2em;
+} */
+
+#view { 
+    position:relative; 
+    width:78em; 
+    height: 45em;
+    margin:30px auto;
+    top: 11em; 
+    overflow: hidden;
+}
+#view ul{
+    height: 45em;
+}
+.slide { 
+    list-style:none; 
+    display: inline-flex;
+    width:100%;   
+}
+.slide li { 
+    width:auto; 
+    float:left; 
+}
+.slide li img {
+    width:85em;
+    height: 41em;
+}
+button {
+     position:absolute; 
+     top:50%; 
+     transform:translateY(-50%);
+     padding:0.5em;
+     cursor:pointer;
+     border: none;
+     color: rgba(126, 126, 126, 0.425);
+    background: none;
+    }
+
+i {
+    font-size: 5em;
+    height: auto;
+    
+}
+
+
+button.prev { 
+    left:3em;
+ }
+button.next { 
+    right:2em;
+ }
+#dot { 
+    top: 2.5em;
+    text-align: center;
+ }
+#dot > ul > li {
+    display:inline-block; 
+    margin:0.01em; 
+    width:5em;
+    height:0.4em; 
+    background:rgba(153, 153, 153, 0.712); 
+    cursor:pointer;}
+#dot > ul li a { 
+    display: block 
+}
+#dot ul li.on { 
+    background:#fff; 
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+#content {
+	width: 100%;
+    margin-top: 40px;
+    height: 430px;
+    margin-bottom: 60px;
+}
+
+#title {
+	text-align: center;
+	border-bottom: 3px solid #666;
+}
+
+.main {
+	width: 400px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 16px;
+	margin-top: 40px;
+}
+
+/* .category select { */
+/* 	margin: 0 8px; */
+/* } */
+
+#category1 {
+	margin-left: 6px;
+}
+
+#category2 {
+	margin-left: 6px;
+}
+
+.cate {
+	margin-right: 12px;
+}
+
+.input {
+	margin-bottom: 5px;
+}
+
+.input span {
+	margin-right: 13px;
+}
+
+.brand span {
+	margin-right: 33px;
+}
+
+.name span {
+	margin-right: 33px;
+}
+
+#goods_features{
+	height: 100px;
+}

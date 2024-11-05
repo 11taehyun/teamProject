@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* 전체 스타일 */
+body {
+    margin-top:4em;
+}
+
+.image{
+    width:10em;
+}
+
+.header_p {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'NanumSquareAcr';
+}
+
+.authentication_request1{
+    font-size:0.7em;
+}
+
+.authentication_request2{
+    font-size:0.7em;
+}
+
+.request_error{
+    color :#C80808;
+    font-size: 0.5em; 
+    margin-left: 1em;
+    margin-top: 0.5em;
+    display: none;
+}
+
+/* .request_error2{
+    color :#C80808 ;
+    font-size: 0.5em; 
+    margin-left: 1em;
+    margin-top: 0.5em;
+    display: none;
+} */
+
+/* 입력 폼 내부 버튼 스타일 */
+input[type=button]{
+    width: 5em;
+    height:100%;
+    background-color: #D9D9D9;
+    border:none;
+    background-color: white;
+    font-size: 0.7em;
+    color:black;
+    outline:none;
+    display:inline;
+    margin-left: -5.3em;
+    box-sizing: border-box;
+    vertical-align: middle; /* 수직 정렬 속성 추가 */
+    margin-top: -0.6em; /* 버튼을 조금 위로 올림 */
+}
+
+/* 페이지 상단 로고와 제목 스타일 */
+header {
+    margin-top: 2em;
+}
+
+.head {
+    text-align: center;
+}
+
+header img {
+    vertical-align: middle;
+}
+
+/* 탭 메뉴 스타일 */
+.tabs {
+    display: block;
+    justify-content: center;
+}
+
+.tabs button:focus {
+    background-color: white;
+}
+
+.tablinks {
+    background-color: #D9D9D9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.625em 1.25em;
+    font-size: 1em;
+    border-top: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+}
+
+.tablinks_active {
+    background-color: #D9D9D9;
+    font-family: 'NanumSqueareLight';
+}
+
+.tablinks_active{
+    background-color: #D9D9D9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.625em 1.25em;
+    font-size: 1em;
+    border-top: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    
+}
+
+.tablinks{
+    background-color: #D9D9D9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.625em 1.25em;
+    font-size: 1em;
+    border-top: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    font-family: 'NanumSqueareLight';
+}
+
+/* 에러 메시지 */
+.msg{
+	color: #C80808;
+	margin-bottom: 10px;
+	margin-left: 40px;
+	font-size: 13px;
+}
+
+/* 탭 내용 스타일 */
+.tabcontent:not(#id) {
+    display: none;
+}
+
+.tabcontent h3 {
+    margin-top: 0;
+}
+
+.tabcontent {
+    margin-top: 12.3em;
+}
+
+.tabcontent:not(#id){
+    position:fixed;
+    text-align: center;
+}
+
+#id {
+    margin-left: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18.5em;
+}
+
+#pw{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 19em;
+    margin-left: auto;
+}
+
+/* 입력 폼 스타일 */
+input[type="text"] {
+    margin-left: 0.5em;
+    border: none;
+    border-bottom: 0.08em solid #BFBFBF;
+    outline: none;
+    width: 19.5em;
+}
+
+.run1{
+	text-align: center;
+}
+
+/* 실행 버튼 스타일 */
+.run1 button {
+    padding: 1em;
+    width: 20em;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    border-width: 0;
+}
+.run2 button{
+    margin-top: 1.7em;
+    padding: 1em;
+    width: 20em;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    border-width: 0;
+    font-family: 'NanumSqueareLight';
+}
+
+input[type=button]{
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+/* 숨김 클래스 */
+.hidden {
+    display: none;
+}
+
+.phone{
+    font-family: 'NanumSquareAcl';
+    margin-left: 0.5em;
+}
+
+.pwfind{
+    display: block;
+}
+
+.pwfind p{
+    text-align: center; 
+    margin-left: 0.5em; 
+    font-size: 0.8em; 
+    font-family: 'NanumSqueareLight';
+}
+
+.pwfind_text{
+    margin-top: 1.3em;
+    font-family: 'NanumSquareAcl';
+}
+
+.pwfind_error{
+    color:#C80808;
+    font-size: 0.5em;
+    text-align: left;
+    margin-left: 3em;
+    /* display: none; */
+}
+
+.input_phone{
+	margin-top: 20px;
+}
+
+.err{
+	text-align: left;
+    margin-left: 23px;
+    margin-top: 5px;
+}
